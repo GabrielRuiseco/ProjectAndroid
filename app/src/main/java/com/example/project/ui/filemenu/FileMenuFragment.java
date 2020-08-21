@@ -86,7 +86,7 @@ public class FileMenuFragment extends Fragment {
         btn_send.setVisibility(View.INVISIBLE);
         name.setVisibility(View.INVISIBLE);
 
-        String url = "http://127.0.0.1:3000/api/downloadit/" + path;
+        String url = "http://10.0.2.2:3000/api/downloadit/" + path;
         imageView.setImageDrawable(LoadImageFromWebOperations(url));
     }
 

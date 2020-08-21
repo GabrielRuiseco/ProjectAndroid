@@ -102,7 +102,7 @@ public class RegisterFragment extends Fragment {
     }
 
     public void register() {
-        String url = "http://127.0.0.1:3000/emp/register";
+        String url = "http://10.0.2.2:3000/emp/register";
         JSONObject data = new JSONObject();
         try {
             data.put("name", et_name.getText().toString());

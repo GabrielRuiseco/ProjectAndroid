@@ -2,6 +2,7 @@ package com.example.project.adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.Response.Listener;
 import com.example.project.R;
 import com.example.project.classes.FileImage;
+import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -39,20 +41,21 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryV
 
     @Override
     public void onBindViewHolder(@NonNull GalleryViewHolder holder, int position) {
-        String url = "http://127.0.0.1:3000/api/downloadit/" + fileArray.get(position).getFileName();
-        holder.imageView.setImageDrawable(LoadImageFromWebOperations(url));
+        String url = "http://10.0.2.2:3000/api/downloadit/" + fileArray.get(position).getFileName();
+        Log.d("TAG4", url);
+        Picasso.get().load(url).into(holder.imageView);
         holder.position = position;
     }
 
-    public static Drawable LoadImageFromWebOperations(String url) {
-        try {
-            InputStream is = (InputStream) new URL(url).getContent();
-            Drawable d = Drawable.createFromStream(is, "src name");
-            return d;
-        } catch (Exception e) {
-            return null;
-        }
-    }
+//    public static Drawable LoadImageFromWebOperations(String url) {
+//        try {
+//            InputStream is = (InputStream) new URL(url).getContent();
+//            Drawable d = Drawable.createFromStream(is, "src name");
+//            return d;
+//        } catch (Exception e) {
+//            return null;
+//        }
+//    }
 
     @Override
     public int getItemCount() {

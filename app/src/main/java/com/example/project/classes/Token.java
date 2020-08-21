@@ -2,7 +2,7 @@ package com.example.project.classes;
 
 public class Token {
     private static String token="void";
-    private static int id;
+    private static String id;
 
     public static void setToken(String tk) {
         Token.token = tk;
@@ -12,11 +12,11 @@ public class Token {
         return Token.token;
     }
 
-    public static void setId(int uid) {
+    public static void setId(String uid) {
         Token.id = uid;
     }
 
-    public static int getId(){
+    public static String getId(){
         return Token.id;
     }
 }

@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,6 +89,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
         et_mail = view.findViewById(R.id.L_email);
         et_pass = view.findViewById(R.id.L_password);
         btn_log = view.findViewById(R.id.btn_log);
@@ -109,7 +111,7 @@ public class LoginFragment extends Fragment {
     }
 
     public void login() {
-        String url = "http://127.0.0.1:3000/emp/login";
+        String url = "http://10.0.2.2:3000/emp/login";
         JSONObject data = new JSONObject();
         try {
             data.put("email", et_mail.getText().toString());

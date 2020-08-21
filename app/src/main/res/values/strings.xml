@@ -22,4 +22,8 @@
     <string name="open">Open</string>
     <string name="create_key">Create KEy</string>
     <string name="dismiss">Dismiss</string>
+    <string name="profile">Profile</string>
+    <string name="first_name">FIRST NAME</string>
+    <string name="last_name_profile">LAST NAME</string>
+    <string name="email_profile">EMAIL</string>
 </resources>
